@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 
-def confidence_interval(N_samples=100, sample_size=40, true_mean=54, true_std=3, confidence=0.95):
+def confidence_interval(N_samples=40, sample_size=16, true_mean=54, true_std=3, confidence=0.95):
     """
     Demonstrates 95% confidence intervals for the mean.
     Parameters:
@@ -46,6 +46,7 @@ def confidence_interval(N_samples=100, sample_size=40, true_mean=54, true_std=3,
         if true_mean < lower or true_mean > upper:
             misses += 1
         # this code block ends here
+    miss_percentage = (misses / N_samples) * 100
     
     # Plot the CIs
     plt.figure(figsize=(8, 9))
@@ -67,12 +68,11 @@ def confidence_interval(N_samples=100, sample_size=40, true_mean=54, true_std=3,
 
     
     # WRITE_YOUR_CODE HERE TO PRINT THE NUMBER OF MISSES AND THE PERCENTAGE
-    miss_percentage = (misses / N_samples) * 100
     print(f"Out of {N_samples} intervals, {misses} did NOT contain the true mean.")
     print(f"This is roughly {miss_percentage:.1f}%, close to the expected 5% for a 95% CI.")
     # this code block ends here
 
-    plt.show()
+    # plt.show()
 
 # ================================
 # Run main if this script is executed
