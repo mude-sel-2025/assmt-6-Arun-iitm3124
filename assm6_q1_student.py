@@ -120,7 +120,7 @@ def task4_variance_scaling(N=1000, m_list=[1,2,10,100]):
 # ================================
 # Task 5: Mean vs. standard deviation
 # ================================
-def task5_mean_std(N=1000, m=10):
+def task5_mean_std(N=1000, m=100):
     for name, dist in dists.items():
         # draw N samples, each of size m
         data = dist.rvs(size=(N,m))
